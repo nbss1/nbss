@@ -89,7 +89,9 @@
 								<div id="main-nav" class="collapse navbar-collapse">
 									<ul class="nav navbar-nav">
 										
-										<li><p id="demo"></p>
+										<li>
+  <p id="demo"></p>
+
 <script>
 function getTime() {
   var xhr = new XMLHttpRequest();
@@ -101,7 +103,17 @@ function getTime() {
       var hours = time.getUTCHours() + 5;
       var minutes = time.getUTCMinutes() + 45;
       var seconds = time.getUTCSeconds();
-      document.getElementById("demo").innerHTML = hours + ":" + minutes + ":" + seconds;
+      
+      // Convert 24-hour time to 12-hour format
+      var ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12;
+      hours = hours ? hours : 12; // the hour '0' should be '12' in PM format
+      
+      // Format the time as a string
+      var timeStr = hours + ':' + minutes + ':' + seconds + ' ' + ampm;
+      
+      // Update the HTML element
+      document.getElementById('demo').innerHTML = timeStr;
     }
     else {
       console.error('Error fetching network time');
@@ -111,8 +123,8 @@ function getTime() {
 }
 
 setInterval(getTime, 1000);
-
 </script>
+
 										</li>
 										<li><a href="#header" class="scroll-link">गृहपृष्ठ</a></li>
 										<li><a href="#service" class="scroll-link">उद्देश्य र कार्ययोजना</a></li>
