@@ -88,6 +88,22 @@
 								</div>
 								<div id="main-nav" class="collapse navbar-collapse">
 									<ul class="nav navbar-nav">
+										
+										<li><p>The current time is <time id="current-time"></time>.</p>
+<script>
+  // Get the current date and time
+  var now = new Date();
+  
+  // Format the time as HH:MM:SS
+  var hours = now.getHours().toString().padStart(2, '0');
+  var minutes = now.getMinutes().toString().padStart(2, '0');
+  var seconds = now.getSeconds().toString().padStart(2, '0');
+  var timeString = hours + ':' + minutes + ':' + seconds;
+  
+  // Set the text of the <time> element to the formatted time
+  document.getElementById('current-time').textContent = timeString;
+</script>
+										</li>
 										<li><a href="#header" class="scroll-link">गृहपृष्ठ</a></li>
 										<li><a href="#service" class="scroll-link">उद्देश्य र कार्ययोजना</a></li>
 										<li><a href="#aboutUs" class="scroll-link">हाम्रो बारेमा</a></li>
@@ -466,7 +482,6 @@
 					</ul>
 					<p>© <span id="year"></span><a href="http://niroulabandhu.com.np"> । निरौला वन्धु सेवा समाज </a></p>
 					<script src="js/date.js"></script>	
-				
 				</div>
 			</section>
 			<!--wrapper end-->
