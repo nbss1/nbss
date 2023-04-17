@@ -90,44 +90,18 @@
 									<ul class="nav navbar-nav">
 										
 										<li>
-  <p id="demo"></p>
+ <a href="https://time.is/Nepal" id="time_is_link" rel="nofollow" style="font-size:24px">Time in Nepal:</a>
+<span id="Nepal_z423" style="font-size:24px"></span>
 
+<script src="//widget.time.is/en.js"></script>
 <script>
-function getTime() {
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://worldtimeapi.org/api/timezone/Asia/Kathmandu');
-  xhr.onload = function() {
-    if (xhr.status === 200) {
-      var data = JSON.parse(xhr.responseText);
-      var time = new Date(data.datetime);
-      
-      // Adjust the time by +5.45 hours
-      time.setHours(time.getHours() + 5);
-      time.setMinutes(time.getMinutes() + 45);
-      
-      var hours = time.getHours();
-      var minutes = time.getMinutes();
-      var seconds = time.getSeconds();
-      
-      // Convert 24-hour time to 12-hour format
-      var ampm = hours >= 12 ? 'PM' : 'AM';
-      hours = hours % 12;
-      hours = hours ? hours : 12; // the hour '0' should be '12' in PM format
-      
-      // Format the time as a string
-      var timeStr = hours + ':' + (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds + ' ' + ampm;
-      
-      // Update the HTML element
-      document.getElementById('demo').innerHTML = timeStr;
+  time_is_widget.init({
+    Nepal_z423: {
+      template: "TIME<br>DATE",
+      date_format: "dayname, monthname dnum, year",
+      timezone: "+5.45"
     }
-    else {
-      console.error('Error fetching network time');
-    }
-  };
-  xhr.send();
-}
-
-setInterval(getTime, 1000);
+  });
 </script>
 
 										</li>
