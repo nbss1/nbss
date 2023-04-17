@@ -89,19 +89,29 @@
 								<div id="main-nav" class="collapse navbar-collapse">
 									<ul class="nav navbar-nav">
 										
-										<li><p>The current time is <time id="current-time"></time>.</p>
+										<li><p id="demo"></p>
 <script>
-  // Get the current date and time
-  var now = new Date();
-  
-  // Format the time as HH:MM:SS
-  var hours = now.getHours().toString().padStart(2, '0');
-  var minutes = now.getMinutes().toString().padStart(2, '0');
-  var seconds = now.getSeconds().toString().padStart(2, '0');
-  var timeString = hours + ':' + minutes + ':' + seconds;
-  
-  // Set the text of the <time> element to the formatted time
-  document.getElementById('current-time').textContent = timeString;
+function getTime() {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'https://worldtimeapi.org/api/timezone/Asia/Kathmandu');
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      var data = JSON.parse(xhr.responseText);
+      var time = new Date(data.datetime);
+      var hours = time.getUTCHours() + 5;
+      var minutes = time.getUTCMinutes() + 45;
+      var seconds = time.getUTCSeconds();
+      document.getElementById("demo").innerHTML = hours + ":" + minutes + ":" + seconds;
+    }
+    else {
+      console.error('Error fetching network time');
+    }
+  };
+  xhr.send();
+}
+
+setInterval(getTime, 1000);
+
 </script>
 										</li>
 										<li><a href="#header" class="scroll-link">गृहपृष्ठ</a></li>
