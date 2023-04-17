@@ -24,6 +24,11 @@ h3 {
   margin: 0px auto;
 }
 
+
+li {
+  border-radius: 50%;
+}
+
 a,a:hover {
   color: #cc580c;
   text-decoration: none;
