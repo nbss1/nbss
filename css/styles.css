@@ -25,9 +25,10 @@ h3 {
 }
 
 
-li {
+li, li img {
   border-radius: 50%;
 }
+
 
 a,a:hover {
   color: #cc580c;
