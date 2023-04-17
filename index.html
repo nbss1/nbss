@@ -100,9 +100,14 @@ function getTime() {
     if (xhr.status === 200) {
       var data = JSON.parse(xhr.responseText);
       var time = new Date(data.datetime);
-      var hours = time.getUTCHours() + 5;
-      var minutes = time.getUTCMinutes() + 45;
-      var seconds = time.getUTCSeconds();
+      
+      // Adjust the time by +5.45 hours
+      time.setHours(time.getHours() + 5);
+      time.setMinutes(time.getMinutes() + 45);
+      
+      var hours = time.getHours();
+      var minutes = time.getMinutes();
+      var seconds = time.getSeconds();
       
       // Convert 24-hour time to 12-hour format
       var ampm = hours >= 12 ? 'PM' : 'AM';
@@ -110,7 +115,7 @@ function getTime() {
       hours = hours ? hours : 12; // the hour '0' should be '12' in PM format
       
       // Format the time as a string
-      var timeStr = hours + ':' + minutes + ':' + seconds + ' ' + ampm;
+      var timeStr = hours + ':' + (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds + ' ' + ampm;
       
       // Update the HTML element
       document.getElementById('demo').innerHTML = timeStr;
