@@ -531,14 +531,24 @@ type="submit"> </div>
             <!-- <li><a href="#"><i class="fa fa-twitter"></i></a><br>
                     </li>                    <li><a href="#"><i class="fa fa-instagram"></i></a><br>                                 </li>                                 <li><a href="#"><i class="fa fa-youtube"></i></a><br>                                 </li>                                 <li><a href="#"><i class="fa fa-linkedin"></i></a><br>                                 </li>                                 <li><a href="#"><i class="fa fa-pinterest"></i></a><br>                                 </li>                                 <li><a href="#"><i class="fa fa-snapchat"></i></a><br>                                 </li>                                 <li><a href="#"><i class="fa fa-tumblr"></i></a><br>                                 </li>                                 <li><a href="#"><i class="fa fa-reddit"></i></a><br>                                 </li> -->
           </ul>
-          <p> © <span id="year"> </span> <a href="https://niroulabandhu.com.np">
-              । निरौला वन्धु सेवा समाज | Updated on <span id="update-date"></span>
+                   <p> © <span id="year"></span><a href="http://niroulabandhu.com.np"> निरौला वन्धु सेवा समाज </a></p>
+          <script src="js/date.js"></script>
+           <p>अन्तिम पटक अध्यावधिक गरिएको <span id="last-update"></span>
               <script>
-  var date = new Date(document.lastModified);
-  var options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long', era: 'short', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true };
-  var nepaliDate = date.toLocaleDateString('ne-NP-u-ca-perso', options);
-  document.getElementById("update-date").innerHTML = nepaliDate;
-</script> </a></p></div>
+      window.onload = function() {
+        var date = new Date(document.lastModified);
+        var options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long', era: 'short', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true };
+        var nepaliDate = date.toLocaleDateString('ne-NP-u-ca-perso', options);
+        var lastUpdate = document.getElementById('last-update');
+        lastUpdate.textContent = nepaliDate;
+      }
+    </script>
+
+           </p>
+         </div>
+      </section>
+         
+         </div>
         <a href="https://niroulabandhu.com.np"> </a></section>
       <a href="https://niroulabandhu.com.np">
         <!--wrapper end-->
