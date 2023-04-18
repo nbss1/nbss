@@ -128,12 +128,39 @@
             <h2> संस्थाको उद्देश्य र कार्ययोजना </h2>
             <h3> निम्न अनुसार रहेको छ </h3>
           </div>
-          <div class="row">
-            <div class="col-md-4">
-              <div class="box-area">
-                <div class="box-area-icon"> <i class="fa fa-heart"> </i> </div>
-                <h3> वंशावली प्रकाशन </h3>
-              </div>
+<div class="row">
+  <div class="col-md-4">
+    <div class="box-area">
+      <div class="box-area-icon"> <i class="fa fa-heart"> </i> </div>
+      <h3> वंशावली प्रकाशन </h3>
+    </div>
+  </div>
+</div>
+
+<style>
+.box-area {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.box-area.fade-in {
+  opacity: 1;
+}
+</style>
+
+<script>
+$(window).scroll(function() {
+  $('.box-area').each(function() {
+    var position = $(this).offset().top;
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll > position - windowHeight + 200) {
+      $(this).addClass('fade-in');
+    }
+  });
+});
+</script>
+
             </div>
             <div class="col-md-4">
               <div class="box-area">
