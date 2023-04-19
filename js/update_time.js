@@ -13,7 +13,7 @@
           timeZone: 'Asia/Kathmandu', 
           calendar: 'nepali' 
         };
-        var nepaliDate = lastUpdate.toLocaleDateString('ne-NP', options);
+        var nepaliDate = lastUpdate.toLocaleDateString('ne-NP', options).replace('सन्', '');
         var updateMessage = document.getElementById('last-update');
-        updateMessage.textContent = "" + nepaliDate;
+        updateMessage.textContent = nepaliDate;
       };
