@@ -15,5 +15,5 @@
         };
         var nepaliDate = lastUpdate.toLocaleDateString('ne-NP', options);
         var updateMessage = document.getElementById('last-update');
-        updateMessage.textContent = "Last updated on " + nepaliDate;
+        updateMessage.textContent = "" + nepaliDate;
       };
