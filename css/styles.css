@@ -1,6 +1,6 @@
 /*------General----------*/
 body {
-  font-family: 'Kokila', sans-serif;
+  font-family: "Kokila", sans-serif;
   font-size: 16px;
   line-height: 1.7;
   color: #777;
@@ -1060,8 +1060,6 @@ blockquote footer, blockquote small, blockquote .small {
 }
 
 @font-face {
-  font-family: 'Kokila';
-  src: url('fonts/kokila.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+  font-family: "Kokila";
+  src: url("https://github.com/nbss1/nbss/blob/main/fonts/kokila.ttf") format("truetype");
 }
